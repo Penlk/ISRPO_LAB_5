@@ -17,4 +17,4 @@ jobs:
 
         # Пример однолинейного простого скрипта shell
         - name: Run a one-line script
-          run: cicrle.py square.py triangle.py rectangle.py
+          run: circle.py square.py triangle.py rectangle.py
