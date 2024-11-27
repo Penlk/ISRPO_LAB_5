@@ -1,34 +1,35 @@
 name: CI
 on:
-   # События, которые запускают jobs
+   # push вызывает действие в ветке main
    push:
       branches: "main"
 
 # jobs запускаются параллельно, если не указана последовательность
 jobs:
-# Название job вы можете назвать как угодно
+# Сценарий на запуск ubuntu
    my_job:
-      # Операционная система в виртуальной машине, в которой запускаются процессы
       runs-on: ubuntu-latest
-         # Шаги
       steps:
-         # Actions от github: проверяет репозиторий, гит и т.д.
+         # Проверка репозитория
          - uses: actions/checkout@v3
-         
-         # Пример однолинейного простого скрипта shell
+
+         # Запускаем тесты
          - name: testing
            run: python -m unittest circle.py square.py triangle.py rectangle.py
 
+#Сценарий на запуск windows
    my_job_seconde:
       runs-on: windows-latest
       steps:
+         #Проверка репозитория
          - uses: actions/checkout@v3
-         
+
+         #Устанавливаем python
          - name: install python
            uses: actions/setup-python@v4
            with:
               python-version: '3.9'
 
+         # Запускаем тесты
          - name: testing
            run: python -m unittest circle.py square.py triangle.py rectangle.py
-      
