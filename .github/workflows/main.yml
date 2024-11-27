@@ -20,11 +20,7 @@ jobs:
 
          - name: install python
            run: sudo apt install python3
-
-         - name: asdf
-           run: python3 --version
-         
          
          # Пример однолинейного простого скрипта shell
          - name: Run a one-line script
-           run: python.exe -m unittest circle.py square.py triangle.py rectangle.py
+           run: python -m unittest circle.py square.py triangle.py rectangle.py
