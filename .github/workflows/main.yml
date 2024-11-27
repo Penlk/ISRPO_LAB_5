@@ -24,3 +24,15 @@ jobs:
          # Пример однолинейного простого скрипта shell
          - name: Run a one-line script
            run: python -m unittest circle.py square.py triangle.py rectangle.py
+
+   my_job_seconde:
+      runs-on: windows-latest
+      steps:
+         - uses: actions/checkout@v3
+
+         - name: install python
+           run: pip install python
+
+         - name: testing
+           run: python -m unittest circle.py square.py triangle.py rectangle.py
+      
