@@ -20,6 +20,9 @@ jobs:
 
          - name: install python
            run: sudo apt install python3
+
+         - name: asdf
+           run: python3 --version
          
          
          # Пример однолинейного простого скрипта shell
