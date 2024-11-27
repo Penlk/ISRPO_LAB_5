@@ -15,11 +15,8 @@ jobs:
          # Actions от github: проверяет репозиторий, гит и т.д.
          - uses: actions/checkout@v3
          
-         - name: update package
-           run: sudo apt update
-         
          # Пример однолинейного простого скрипта shell
-         - name: Run a one-line script
+         - name: testing
            run: python -m unittest circle.py square.py triangle.py rectangle.py
 
    my_job_seconde:
@@ -27,7 +24,7 @@ jobs:
       steps:
          - uses: actions/checkout@v3
          
-         - name: Set up Python
+         - name: install python
            uses: actions/setup-python@v4
            with:
               python-version: '3.9'
