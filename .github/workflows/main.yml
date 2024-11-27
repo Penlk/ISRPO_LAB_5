@@ -18,8 +18,10 @@ jobs:
          - name: update package
            run: sudo apt update
 
-         - name: install python
-           run: sudo apt install python3
+         - name: Set up Python
+           uses: actions/setup-python@v4
+           with:
+              python-version: '3.9'
          
          # Пример однолинейного простого скрипта shell
          - name: Run a one-line script
