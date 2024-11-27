@@ -17,11 +17,6 @@ jobs:
          
          - name: update package
            run: sudo apt update
-
-         - name: Set up Python
-           uses: actions/setup-python@v4
-           with:
-              python-version: '3.9'
          
          # Пример однолинейного простого скрипта shell
          - name: Run a one-line script
@@ -31,9 +26,11 @@ jobs:
       runs-on: windows-latest
       steps:
          - uses: actions/checkout@v3
-
-         - name: install python
-           run: pip install python3
+         
+         - name: Set up Python
+           uses: actions/setup-python@v4
+           with:
+              python-version: '3.9'
 
          - name: testing
            run: python -m unittest circle.py square.py triangle.py rectangle.py
