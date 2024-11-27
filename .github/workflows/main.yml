@@ -1,20 +1,27 @@
 name: CI
 on:
    # События, которые запускают jobs
-    push:
+   push:
       branches: "main"
 
 # jobs запускаются параллельно, если не указана последовательность
 jobs:
-    # Название job вы можете назвать как угодно
-    my_job:
+# Название job вы можете назвать как угодно
+   my_job:
       # Операционная система в виртуальной машине, в которой запускаются процессы
       runs-on: ubuntu-latest
-        # Шаги
+         # Шаги
       steps:
-        # Actions от github: проверяет репозиторий, гит и т.д.
-        - uses: actions/checkout@v3
+         # Actions от github: проверяет репозиторий, гит и т.д.
+         - uses: actions/checkout@v3
+         
+         - name: update package
+           run: sudo apt update
 
-        # Пример однолинейного простого скрипта shell
-        - name: Run a one-line script
-          run: python.exe -m unittest circle.py square.py triangle.py rectangle.py
+         - name: install python
+           run: sudo apt install python3
+         
+         
+         # Пример однолинейного простого скрипта shell
+         - name: Run a one-line script
+           run: python.exe -m unittest circle.py square.py triangle.py rectangle.py
